@@ -3,9 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginActivity2">
-    <activity
-        android:id="@+id/loginActivity2"
-        android:name="LoginActivity"
-        android:label="LoginActivity" />
+    app:startDestination="@id/loginActivity">
+    <fragment
+        android:id="@+id/initMenu"
+        android:name="com.example.gymfit.MenuActivity"
+        android:label="fragment_init_menu"
+        tools:layout="@layout/fragment_init_menu" />
+    <fragment
+        android:id="@+id/loginActivity"
+        android:name="com.example.gymfit.MainActivity"
+        android:label="LoginActivity"
+        tools:layout="@layout/activity_main">
+        <action
+            android:id="@+id/action_loginActivity_to_initMenu"
+            app:destination="@id/initMenu" />
+        <action
+            android:id="@+id/action_loginActivity_to_register"
+            app:destination="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/register"
+        android:name="com.example.gymfit.Register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_register_to_initMenu"
+            app:destination="@id/initMenu" />
+    </fragment>
+
 </navigation>

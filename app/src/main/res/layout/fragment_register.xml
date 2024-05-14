@@ -6,6 +6,18 @@
     android:gravity="center"
     android:padding="16dp">
 
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        android:autofillHints="" />
+
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
@@ -25,25 +37,13 @@
         android:hint="@string/contrase_a"
         android:inputType="textPassword"
         android:minHeight="48dp"
+        android:textColorHint="#757575"
         android:autofillHints="" />
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/iniciar_sesi_n"/>
     <Button
         android:id="@+id/buttonSignin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registrarse"/>
-
-    <TextView
-        android:id="@+id/textViewForgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/olvidaste_tu_contrase_a"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"/>
 
 </LinearLayout>
