@@ -27,6 +27,7 @@ class Register : AppCompatActivity() {
         signinButton = findViewById(R.id.buttonSignin)
 
         //firebaseAuth = FirebaseAuth.getInstance()
+        //Añadir checkbox con privacidad de datos, que no seran promovidos a terceros, y que se pueden borrar los datos si el usuario lo pido
 
         signinButton.setOnClickListener{
             // Lógica para el botón "Registrarse"

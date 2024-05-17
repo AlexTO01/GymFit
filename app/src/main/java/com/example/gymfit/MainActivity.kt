@@ -69,4 +69,8 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+    fun showAboutMessage(){
+        Toast.makeText(this, "Soy Alex", Toast.LENGTH_SHORT).show()
+    }
 }

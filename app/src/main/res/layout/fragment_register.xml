@@ -3,9 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About"
+        android:textSize="18sp"
+        android:clickable="true"
+        android:onClick="showAboutMessage"
+        android:layout_gravity="right"
+        android:padding="8dp"
+        android:textColor="@android:color/darker_gray"
+        android:layout_margin="16dp"/>
+
+    <ImageView
+        android:layout_width="186dp"
+        android:layout_height="187dp"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:src="@drawable/icono_app" />
 
     <EditText
         android:id="@+id/editTextName"
@@ -15,6 +32,7 @@
         android:hint="Name"
         android:inputType="text"
         android:minHeight="48dp"
+        android:layout_gravity="center"
         android:textColorHint="#757575"
         android:autofillHints="" />
 
@@ -27,6 +45,7 @@
         android:inputType="textEmailAddress"
         android:minHeight="48dp"
         android:textColorHint="#757575"
+        android:layout_gravity="center"
         android:autofillHints="" />
 
     <EditText
@@ -38,12 +57,14 @@
         android:inputType="textPassword"
         android:minHeight="48dp"
         android:textColorHint="#757575"
+        android:layout_gravity="center"
         android:autofillHints="" />
 
     <Button
         android:id="@+id/buttonSignin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Registrarse"/>
 
 </LinearLayout>

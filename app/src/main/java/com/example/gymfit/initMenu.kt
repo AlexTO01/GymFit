@@ -12,15 +12,8 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_init_menu)
 
-        val buttonMacros: Button = findViewById(R.id.buttonMacros)
         val buttonRutinas: Button = findViewById(R.id.buttonRutinas)
         val buttonAnalisis: Button = findViewById(R.id.buttonAnalisis)
-
-        buttonMacros.setOnClickListener {
-            // Lógica para el botón "Macros"
-            // val intent = Intent(this, MacrosActivity)
-            // startActivity(intent)
-        }
 
         buttonRutinas.setOnClickListener {
             // Lógica para el botón "Rutinas"
