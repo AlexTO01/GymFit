@@ -7,6 +7,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.children
 
 class PrincipalRutines : AppCompatActivity() {
 
@@ -50,6 +51,16 @@ class PrincipalRutines : AppCompatActivity() {
             val intent = Intent(this, ChooseExercise::class.java)
             launchers[day]?.launch(intent)
         }
+
+        // Add click listener to exercise TextViews for deletion
+        container.children.forEach { view ->
+            if (view is TextView) {
+                view.setOnClickListener {
+                    // Remove exercise from the container and update UI
+                    container.removeView(view)
+                }
+            }
+        }
     }
 
     private fun addExerciseToDay(day: String, exercise: String) {
@@ -58,5 +69,10 @@ class PrincipalRutines : AppCompatActivity() {
             textSize = 16f
         }
         exerciseContainers[day]?.addView(exerciseTextView)
+        // Add click listener to newly added exercise TextView for deletion
+        exerciseTextView.setOnClickListener {
+            // Remove exercise from the container and update UI
+            exerciseContainers[day]?.removeView(exerciseTextView)
+        }
     }
 }
