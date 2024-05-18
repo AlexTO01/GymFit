@@ -43,6 +43,32 @@
             android:theme="@style/Theme.GymFit.NoActionBar">
 
         </activity>
+
+        <activity
+            android:name=".ChooseExercise"
+            android:exported="true"
+            android:label="Gymfit"
+            android:theme="@style/Theme.GymFit.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".PrincipalRutines"
+            android:exported="true"
+            android:label="Gymfit"
+            android:theme="@style/Theme.GymFit.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".AddNewExercise"
+            android:exported="true"
+            android:label="Gymfit"
+            android:theme="@style/Theme.GymFit.NoActionBar">
+
+        </activity>
+
+
     </application>
 
 </manifest>

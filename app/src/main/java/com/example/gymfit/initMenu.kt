@@ -23,8 +23,8 @@ class MenuActivity : AppCompatActivity() {
 
         buttonRutinas.setOnClickListener {
             // Lógica para el botón "Rutinas"
-            // val intent = Intent(this, RutinasActivity)
-            // startActivity(intent)
+            val intent = Intent(this, PrincipalRutines::class.java)
+            startActivity(intent)
         }
 
         buttonAnalisis.setOnClickListener {

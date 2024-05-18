@@ -22,7 +22,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
                 android:layout_gravity="start"
-                android:text="@string/bienvenido"/>
+                android:text="@string/GYMFIT"/>
 
             <ImageView
                 android:id="@+id/pfp"
@@ -30,6 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:onClick="showPopupMenu"
+                android:contentDescription="@string/pfp"
                 android:src="@mipmap/ic_launcher_round" />
 
         </FrameLayout>

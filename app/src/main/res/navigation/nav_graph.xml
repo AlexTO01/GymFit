@@ -8,7 +8,11 @@
         android:id="@+id/initMenu"
         android:name="com.example.gymfit.MenuActivity"
         android:label="fragment_init_menu"
-        tools:layout="@layout/fragment_init_menu" />
+        tools:layout="@layout/fragment_init_menu" >
+        <action
+            android:id="@+id/action_initMenu_to_principalRutines"
+            app:destination="@id/principalRutines" />
+    </fragment>
     <fragment
         android:id="@+id/loginActivity"
         android:name="com.example.gymfit.MainActivity"
@@ -30,5 +34,28 @@
             android:id="@+id/action_register_to_initMenu"
             app:destination="@id/initMenu" />
     </fragment>
+    <fragment
+        android:id="@+id/principalRutines"
+        android:name="com.example.gymfit.PrincipalRutines"
+        android:label="fragment_principal_rutines"
+        tools:layout="@layout/fragment_principal_rutines" >
+        <action
+            android:id="@+id/action_principalRutines_to_chooseExercice"
+            app:destination="@id/chooseExercice" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseExercice"
+        android:name="com.example.gymfit.chooseExercice"
+        android:label="fragment_choose_exercice"
+        tools:layout="@layout/fragment_choose_exercice" >
+        <action
+            android:id="@+id/action_chooseExercice_to_addNewExercice"
+            app:destination="@id/addNewExercice" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewExercice"
+        android:name="com.example.gymfit.addNewExercice"
+        android:label="fragment_add_new_exercice"
+        tools:layout="@layout/fragment_add_new_exercice" />
 
 </navigation>
