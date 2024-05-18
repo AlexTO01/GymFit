@@ -23,7 +23,7 @@
         android:layout_height="187dp"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:src="@drawable/icono_app" />
+        android:src="@mipmap/ic_launcher_round" />
 
     <EditText
         android:id="@+id/editTextEmail"

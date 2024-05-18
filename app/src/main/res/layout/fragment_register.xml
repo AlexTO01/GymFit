@@ -22,7 +22,7 @@
         android:layout_height="187dp"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:src="@drawable/icono_app" />
+        android:src="@mipmap/ic_launcher_round" />
 
     <EditText
         android:id="@+id/editTextName"
@@ -60,11 +60,19 @@
         android:layout_gravity="center"
         android:autofillHints="" />
 
+    <CheckBox
+        android:id="@+id/checkBoxRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acepto los términos y condiciones" />
+
     <Button
         android:id="@+id/buttonSignin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Registrarse"/>
+
+
 
 </LinearLayout>

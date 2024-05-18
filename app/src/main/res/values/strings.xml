@@ -19,4 +19,6 @@
     <string name="iniciar_sesi_n">Iniciar sesión</string>
     <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
     <string name="Name" />
+    <string name="bienvenido">Bienvenido</string>
+    <string name="small_image_description">small_image_description</string>
 </resources>

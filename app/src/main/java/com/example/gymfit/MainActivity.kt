@@ -2,6 +2,7 @@ package com.example.gymfit
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -70,7 +71,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun showAboutMessage(){
+    fun showAboutMessage(view: View) {
         Toast.makeText(this, "Soy Alex", Toast.LENGTH_SHORT).show()
     }
+
 }

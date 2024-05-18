@@ -2,25 +2,63 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/buttonRutinas"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:padding="32dp"
-        android:text="@string/rutinas" />
+        android:layout_height="49dp"
+        android:background="@color/design_default_color_primary"
+        android:orientation="vertical">
+
+        <!-- Imagen en pequeño superpuesta -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="start"
+                android:text="@string/bienvenido"/>
+
+            <ImageView
+                android:id="@+id/pfp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:onClick="showPopupMenu"
+                android:src="@mipmap/ic_launcher_round" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+        <Button
+            android:id="@+id/buttonRutinas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:padding="32dp"
+            android:text="@string/rutinas" />
         <!---android:drawableTop="@drawable/rutinas_icon"/> -->
 
-    <Button
-        android:id="@+id/buttonAnalisis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:padding="32dp"
-        android:text="@string/an_lisis_de_ejercicio" />
+        <Button
+            android:id="@+id/buttonAnalisis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
+            android:padding="32dp"
+            android:text="@string/an_lisis_de_ejercicio" />
         <!---android:drawableTop="@drawable/analisis_icon"/> -->
+    </LinearLayout>
 
 </LinearLayout>
