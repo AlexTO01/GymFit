@@ -1,21 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edit_text_exercise_name"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre del ejercicio"
-        android:inputType="text" />
+        android:layout_height="49dp"
+        android:background="@color/design_default_color_primary"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button_add_exercise"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Añadir ejercicio"
-        android:layout_marginTop="16dp" />
+        <!-- Imagen en pequeño superpuesta -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="start"
+                android:text="@string/GYMFIT"/>
+
+            <ImageView
+                android:id="@+id/pfp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:onClick="showPopupMenu"
+                android:contentDescription="@string/pfp"
+                android:src="@mipmap/ic_launcher_round" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/edit_text_exercise_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre del ejercicio"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edit_text_exercise_series"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numero de series"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/edit_text_exercise_reps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Numero de repeticiones"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/button_add_exercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Añadir ejercicio"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
 </LinearLayout>
