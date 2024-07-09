@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_initMenu_to_principalRutines"
             app:destination="@id/principalRutines" />
+        <action
+            android:id="@+id/action_initMenu_to_analice_exercice"
+            app:destination="@id/analice_exercice" />
     </fragment>
     <fragment
         android:id="@+id/loginActivity"
@@ -57,5 +60,10 @@
         android:name="com.example.gymfit.addNewExercice"
         android:label="fragment_add_new_exercice"
         tools:layout="@layout/fragment_add_new_exercice" />
+    <fragment
+        android:id="@+id/analice_exercice"
+        android:name="com.example.gymfit.analice_exercice"
+        android:label="fragment_analice_exercice"
+        tools:layout="@layout/fragment_analice_exercice" />
 
 </navigation>

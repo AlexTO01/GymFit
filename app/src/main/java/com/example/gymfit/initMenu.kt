@@ -31,6 +31,8 @@ class MenuActivity : AppCompatActivity() {
             // Lógica para el botón "Análisis de ejercicio"
             // val intent = Intent(this, AnalisisActivity)
             // startActivity(intent)
+            val intent = Intent(this, analiceExercice::class.java)
+            startActivity(intent)
         }
     }
     fun showPopupMenu(v: View) {

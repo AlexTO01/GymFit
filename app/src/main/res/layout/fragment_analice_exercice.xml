@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:background="@color/design_default_color_primary"
+        android:orientation="vertical">
+
+        <!-- Imagen en pequeño superpuesta -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_gravity="start"
+                android:text="@string/GYMFIT"/>
+
+            <ImageView
+                android:id="@+id/pfp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:onClick="showPopupMenu"
+                android:contentDescription="@string/pfp"
+                android:src="@mipmap/ic_launcher_round" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Zona para añadir una foto a elección -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/selected_image"
+            android:layout_width="match_parent"
+            android:layout_height="532dp"
+            android:layout_gravity="center"
+            android:background="@color/design_default_color_background"
+            android:scaleType="centerCrop" />
+
+        <Button
+            android:id="@+id/select_image_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Elegir imagen"
+            android:onClick="selectImage" />
+
+        <!-- Botón para analizar -->
+        <Button
+            android:id="@+id/analyze_button"
+            android:layout_width="205dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:minHeight="48dp"
+            android:onClick="analyzeImage"
+            android:text="Analizar ejercicio"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
