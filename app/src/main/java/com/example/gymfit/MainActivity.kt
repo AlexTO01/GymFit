@@ -7,8 +7,26 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.gymfit.R
-//import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import java.security.KeyStore
+import javax.net.ssl.*
+import org.json.JSONObject
+import java.io.IOException
+import java.util.concurrent.CountDownLatch
+import okhttp3.OkHttpClient
+import okhttp3.Request
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.RequestBody
+import okhttp3.Response
+
+val client = OkHttpClient()
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +35,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var loginButton: Button
     private lateinit var signinButton: Button
 
-    //private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,51 +45,57 @@ class MainActivity : AppCompatActivity() {
         loginButton = findViewById(R.id.buttonLogin)
         signinButton = findViewById(R.id.buttonSignin)
 
-        //firebaseAuth = FirebaseAuth.getInstance()
-
         loginButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
             val password = passwordEditText.text.toString().trim()
 
-            val intent = Intent(this, MenuActivity::class.java)
-            startActivity(intent)
+            GlobalScope.launch(Dispatchers.Main) {
+                var userExist = withContext(Dispatchers.IO) { getUser(email, password) }
 
-
-            /*
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Por favor, ingresa correo electrónico y contraseña", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            */
-
-            /*
-            firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-                        // Inicio de sesión exitoso, puedes redirigir a la siguiente actividad
-
-                    } else {
-                        // Si el inicio de sesión falla, muestra un mensaje de error
-                        Toast.makeText(this, "Error al iniciar sesión: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                    }
+                if (userExist) {
+                    // Lógica para el caso en que el usuario existe
+                    val intent = Intent(this@MainActivity, MenuActivity::class.java)
+                    startActivity(intent)
+                } else {
+                    // Manejar el caso en que el usuario no existe
+                    Toast.makeText(this@MainActivity, "Usuario no encontrado", Toast.LENGTH_SHORT)
+                        .show()
                 }
-
-             */
+            }
         }
 
-        signinButton.setOnClickListener{
-            // Lógica para el botón "Registrarse"
-            //val intent = Intent(this, Register)
-            // startActivity(intent)
+
+        signinButton.setOnClickListener {
             val intent = Intent(this, Register::class.java)
             startActivity(intent)
-
         }
     }
 
     fun showAboutMessage(view: View) {
-        Toast.makeText(this, "Soy Alex", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Prueba de concepto de la aplicación, los datos guardados serán guardados para el uso de la aplicación", Toast.LENGTH_SHORT).show()
     }
+
+
+    private fun getUser(email: String, passwd: String): Boolean {
+        var userExists = false
+
+        val url = "http://192.168.1.136:4000/login?email=$email&password=$passwd"
+
+        val request = Request.Builder()
+            .url(url)
+            .build()
+
+        client.newCall(request).execute().use { response ->
+            if (!response.isSuccessful) throw IOException("Unexpected code $response")
+            val responseBody = response.body?.string()
+            println(responseBody)
+
+            // Aquí deberías analizar la respuesta JSON y establecer userExists en consecuencia
+            val jsonResponse = JSONObject(responseBody)
+            userExists = jsonResponse.getBoolean("userExists")
+        }
+        return userExists
+    }
+
 
 }
