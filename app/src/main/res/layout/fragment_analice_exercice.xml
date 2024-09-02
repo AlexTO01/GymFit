@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,7 +11,6 @@
         android:background="@color/design_default_color_primary"
         android:orientation="vertical">
 
-        <!-- Imagen en pequeño superpuesta -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -38,7 +36,6 @@
         </FrameLayout>
     </LinearLayout>
 
-    <!-- Zona para añadir una foto a elección -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -59,10 +56,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:text="Elegir imagen"
-            android:onClick="selectImage" />
+            android:text="Elegir imagen" />
 
-        <!-- Botón para analizar -->
         <Button
             android:id="@+id/analyze_button"
             android:layout_width="205dp"
@@ -70,12 +65,20 @@
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
             android:minHeight="48dp"
-            android:onClick="analyzeImage"
             android:text="Analizar ejercicio"
             tools:ignore="TouchTargetSizeCheck" />
 
+        <!-- TextView para mostrar el resultado del análisis -->
+        <TextView
+            android:id="@+id/analysis_result_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_gravity="center"/>
+
     </LinearLayout>
-
-
 
 </LinearLayout>
