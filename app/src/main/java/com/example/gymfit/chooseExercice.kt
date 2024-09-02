@@ -69,7 +69,7 @@ class ChooseExercise : AppCompatActivity() {
         val client = OkHttpClient()
 
         // Reemplaza con tu URL real
-        val url = "https://tu-api.com/getExercises"
+        val url = "http://192.168.1.136:4000/exercises"
 
         val request = Request.Builder()
             .url(url)
