@@ -51,9 +51,6 @@ class MainActivity : AppCompatActivity() {
 
             GlobalScope.launch(Dispatchers.Main) {
                 var userExist = withContext(Dispatchers.IO) { getUser(email, password) }
-                if ((email == "root") && (password == "12345")){
-                    userExist = true;
-                }
 
                 if (userExist) {
                     // Lógica para el caso en que el usuario existe
